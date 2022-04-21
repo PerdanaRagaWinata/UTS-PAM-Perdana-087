@@ -1,74 +1,83 @@
-import { StyleSheet, Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/ionicons'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import React,{Component} from 'react'
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as React from 'react';
 
-import TampilanHome from './tampilan/home';
-import TampilanPemesanan from './tampilan/pemesanan';
-import TampilanPembatalan from './tampilan/pembatalan';
-import TampilanLainnya from './tampilan/lainnya';
+import HomeScreen from "./Component/HomeScreen/HomeScreen";
+import Screen_detail from "./Component/Screen_detail/Detail_contact";
+import Screen_tambah from "./Component/Screen_tambah/Tambah_contact";
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  };
-  render(){
-    return (
-      <NavigationContainer>
+function App(){
+    return(
+     <NavigationContainer>
+        <Stack.Navigator initialRouterName="Home">
+          <Stack.Screen
+            name="Home RaContact"
+            component={HomeScreen} 
+            options={{headerShown: false}}
+        />
 
-        <Tab.Navigator screenOptions={{headerShown:false}}>
-          <Tab.Screen name="Home" component={TampilanHome}
-          options={{
-            headerShown: false,
-            tabBarLabel :'Beranda',
-            tabBarIcon:()=>(
-            <Icon name={'home'}  size={28}/>
-              )
-            }}/>
-          <Tab.Screen name="Booking" component={TampilanPemesanan}
-          options={{
-            headerShown: false,
-            tabBarLabel :'Booking Kapal',
-            tabBarIcon:()=>(
-            <Icon name={'boat'}  size={28}/>
-              )
-            }}/>
-          <Tab.Screen name="Pembatalan" component={TampilanPembatalan}
-          options={{
-            headerShown: false,
-            tabBarLabel :'Pembatalan',
-            tabBarIcon:()=>(
-            <Icon name={'close-circle-outline'}  size={28}/>
-              )
-            }}/>
-          <Tab.Screen name="Lainnya" component={TampilanLainnya}
-          options={{
-            headerShown: false,
-            tabBarLabel :'Lainnya',
-            tabBarIcon:()=>(
-            <Icon name={'options'}  size={28}/>
-              )
-            }}/>
-        </Tab.Navigator>
+        <Stack.Screen
+            name="Detail kontak"
+            component={Screen_detail} 
+            options={{ headerShown: false }}
+        />
+        <Stack.Screen
+            name="Tambahkan kontak"
+            component={Screen_tambah} 
+            options={{ headerShown: false }}
+        />
+       
+        </Stack.Navigator>
 
-        
+    </NavigationContainer>
 
-      </NavigationContainer>
+
+
+
+
+
+
+
+
+
+
+
     )
-  }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
 export default App;
+
+
+
+
+
+
+
+

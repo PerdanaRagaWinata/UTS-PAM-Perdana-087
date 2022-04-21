@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "YuKapal",
-    "slug": "UTS_PAM",
+    "name": "RaContact",
+    "slug": "Tugas_PAM_4",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.raga.yukapal"
+      "package": "com.raga.RaContact"
     },
     "web": {
       "favicon": "./assets/favicon.png"
